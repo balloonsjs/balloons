@@ -1,0 +1,14 @@
+{
+  "name": "balloon",
+  "repo": "balloonsjs/balloon",
+  "description": "An event-based JavaScript framework for modules, widgets or components of a page.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
