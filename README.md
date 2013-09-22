@@ -1,3 +1,3 @@
 # Balloons JS
 
-An event-based JavaScript framework for modules, widgets or components of a page.
+An event-based JavaScript library for modules, widgets or components of a page.
