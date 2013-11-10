@@ -1,11 +1,19 @@
 {
   "name": "balloon",
   "repo": "balloonsjs/balloon",
-  "description": "An event-based JavaScript framework for modules, widgets or components of a page.",
+  "description": "An event-based JavaScript library to build front-end components or widgets.",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
-  "development": {},
+  "dependencies": {
+    "balloonsjs/clone": "*",
+    "balloonsjs/extend": "*",
+    "balloonsjs/inherits": "*",
+    "balloonsjs/EventEmitter": "*",
+    "balloonsjs/Component": "*"
+  },
+  "development": {
+    "bestander/jasmine": "*"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": [
