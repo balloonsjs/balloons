@@ -1,22 +1,10 @@
 'use strict';
 
 // Module dependencies
-var clone = require('clone'),
-    extend = require('extend'),
-    inherits = require('inherits'),
+var inherits = require('inherits'),
     EventEmitter = require('EventEmitter'),
     Component = require('Component'),
     Q = {};
-
-// Version
-Q.version = '0.0.1';
-
-// Utils
-Q.util = {
-    'clone': clone,
-    'extend': extend,
-    'inherits': inherits
-};
 
 // Observable
 Q.observable = function (component) {
