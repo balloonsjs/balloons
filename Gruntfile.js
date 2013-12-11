@@ -34,7 +34,7 @@ module.exports = function (grunt) {
                     'banner': '<%= banner.full %>'
                 },
                 'src': ['./src/Q.js', './src/EventEmitter.js', './src/Component.js'],
-                'dest': './dist/<%= pkg.name %>.js'
+                'dest': './dist/Q.js'
             }
         },
 
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 
             'js': {
                 'src': ['<%= concat.js.dest %>'],
-                'dest': './dist/<%= pkg.name %>.min.js'
+                'dest': './dist/Q.min.js'
             }
 
         },
@@ -73,6 +73,14 @@ module.exports = function (grunt) {
                     'private': false
                 }
             }
+        },
+
+        'jasmine': {
+            'src': ['dist/Q.js'],
+            'options': {
+                'specs': ['tests/extend/spec.js'],
+                'version': '1.3.1'
+            }
         }
     });
 
@@ -81,9 +89,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-jslint');
     grunt.loadNpmTasks('grunt-jsdoc');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     // Resgister task(s).
     grunt.registerTask('default', []);
+    grunt.registerTask('test', ['concat', 'jasmine']);
     grunt.registerTask('lint', ['concat', 'jslint']);
     grunt.registerTask('doc', ['concat', 'jsdoc']);
     grunt.registerTask('dev', ['concat']);

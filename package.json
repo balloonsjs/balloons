@@ -1,6 +1,6 @@
 {
-  "name": "Q",
-  "version": "0.0.1",
+  "name": "balloons",
+  "version": "0.1.0",
   "description": "An event-based JavaScript library to build front-end components or widgets.",
   "author": "<chico@mercadolibre.com>",
   "contributors": [
@@ -27,6 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.5.2",
     "grunt-jslint": "0.2.6",
     "grunt-contrib-concat": "0.3.0",
     "grunt-contrib-uglify": "0.2.2",
