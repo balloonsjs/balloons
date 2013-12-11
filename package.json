@@ -1,0 +1,37 @@
+{
+  "name": "Q",
+  "version": "0.0.1",
+  "description": "An event-based JavaScript library to build front-end components or widgets.",
+  "author": "<chico@mercadolibre.com>",
+  "contributors": [
+    {
+      "name": "Guille Paz",
+      "email": "guille87paz@gmail.com"
+    },
+    {
+      "name": "Hernan Mammana",
+      "email": "hernanmammana@gmail.com"
+    },
+    {
+      "name": "Leandro Linares",
+      "email": "lean8086@gmail.com"
+    }
+  ],
+  "scripts": {
+    "start": "node ./app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balloonjs/Q.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-jslint": "0.2.6",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-uglify": "0.2.2",
+    "grunt-jsdoc": "~0.4.0"
+  },
+  "license": "MIT",
+  "engine": "node >= 0.8.6"
+}

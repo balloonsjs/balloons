@@ -1,0 +1,14 @@
+{
+  "name": "Q",
+  "repo": "balloonsjs/Q",
+  "description": "An event-based JavaScript library to build front-end components or widgets.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "bestander/jasmine": "*"
+  },
+  "license": "MIT",
+  "main": "./dist/Q.js",
+  "scripts": ["./dist/Q.js"]
+}
