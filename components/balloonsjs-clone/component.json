@@ -1,0 +1,16 @@
+{
+  "name": "clone",
+  "repo": "balloonsjs/clone",
+  "description": "Returns a shallow-copied clone of a given object.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "bestander/jasmine": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

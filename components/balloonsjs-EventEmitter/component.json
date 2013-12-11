@@ -1,0 +1,16 @@
+{
+  "name": "EventEmitter",
+  "repo": "balloonsjs/EventEmitter",
+  "description": "An EventEmitter Class for the browser based on NodeJS EventEmitter.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "bestander/jasmine": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

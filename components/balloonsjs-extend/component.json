@@ -1,0 +1,16 @@
+{
+  "name": "extend",
+  "repo": "balloonsjs/extend",
+  "description": "Extends a given object with properties from another object.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "bestander/jasmine": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
