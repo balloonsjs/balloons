@@ -54,11 +54,9 @@
         var prop;
 
         for (prop in from) {
-
             if (from[prop]) {
                 destination[prop] = from[prop];
             }
-
         }
 
         return destination;

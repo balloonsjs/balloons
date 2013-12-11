@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 'options': {
                     'banner': '<%= banner.full %>'
                 },
-                'src': ['./src/Q.js', './src/EventEmitter.js', './src/Component.js'],
+                'src': ['./src/Q.js', './src/emitter.js', './src/Component.js'],
                 'dest': './dist/Q.js'
             }
         },
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
         'jasmine': {
             'src': ['dist/Q.js'],
             'options': {
-                'specs': ['tests/extend/spec.js'],
+                'specs': ['tests/**/spec.js'],
                 'version': '1.3.1'
             }
         }
