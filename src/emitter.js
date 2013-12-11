@@ -5,21 +5,21 @@
      * Event Emitter Class for the browser.
      * @memberof ch
      * @constructor
-     * @returns {Object} Returns a new instance of EventEmitter.
+     * @returns {Object} Returns a new instance of Emitter.
      * @example
-     * // Create a new instance of EventEmitter.
-     * var emitter = new EventEmitter();
+     * // Create a new instance of Emitter.
+     * var emitter = new Emitter();
      * @example
-     * // Inheriting from EventEmitter.
-     * inherits(Component, EventEmitter);
+     * // Inheriting from Emitter.
+     * inherits(Component, Emitter);
      */
-    function EventEmitter() {
+    function Emitter() {
         return this;
     }
 
     /**
      * Adds a listener to the collection for a specified event.
-     * @memberof! EventEmitter.prototype
+     * @memberof! Emitter.prototype
      * @function
      * @param {String} event The event name to subscribe.
      * @param {Function} listener Listener function.
@@ -28,7 +28,7 @@
      * // Will add an event listener to 'ready' event.
      * emitter.on('ready', listener);
      */
-    EventEmitter.prototype.on = function (event, listener, once) {
+    Emitter.prototype.on = function (event, listener, once) {
 
         this._eventsCollection = this._eventsCollection || {};
 
@@ -45,7 +45,7 @@
 
     /**
      * Adds a listener to the collection for a specified event to will execute only once.
-     * @memberof! EventEmitter.prototype
+     * @memberof! Emitter.prototype
      * @function
      * @param {String} event Event name.
      * @param {Function} listener Listener function.
@@ -54,7 +54,7 @@
      * // Will add an event handler to 'contentLoad' event once.
      * widget.once('contentLoad', listener);
      */
-    EventEmitter.prototype.once = function (event, listener) {
+    Emitter.prototype.once = function (event, listener) {
 
         this.on(event, listener, true);
 
@@ -63,7 +63,7 @@
 
     /**
      * Removes a listener from the collection for a specified event.
-     * @memberof! EventEmitter.prototype
+     * @memberof! Emitter.prototype
      * @function
      * @param {String} event Event name.
      * @param {Function} listener Listener function.
@@ -72,7 +72,7 @@
      * // Will remove event listener to 'ready' event.
      * widget.off('ready', listener);
      */
-    EventEmitter.prototype.off = function (event, listener) {
+    Emitter.prototype.off = function (event, listener) {
 
         if (this._eventsCollection) {
             return this;
@@ -97,7 +97,7 @@
 
     /**
      * Returns all listeners from the collection for a specified event.
-     * @memberof! EventEmitter.prototype
+     * @memberof! Emitter.prototype
      * @function
      * @param {String} event The event name.
      * @returns {Array}
@@ -105,14 +105,14 @@
      * // Returns listeners from 'ready' event.
      * widget.getListeners('ready');
      */
-    EventEmitter.prototype.getListeners = function (event) {
+    Emitter.prototype.getListeners = function (event) {
 
         return this._eventsCollection[event];
     };
 
     /**
      * Execute each item in the listener collection in order with the specified data.
-     * @memberof! EventEmitter.prototype
+     * @memberof! Emitter.prototype
      * @function
      * @param {String} event The name of the event you want to emit.
      * @param {...Object} var_args Data to pass to the listeners.
@@ -120,7 +120,7 @@
      * // Will emit the 'ready' event with 'param1' and 'param2' as arguments.
      * widget.emit('ready', 'param1', 'param2');
      */
-    EventEmitter.prototype.emit = function () {
+    Emitter.prototype.emit = function () {
 
         var args = Array.prototype.slice.call(arguments, 0), // converted to array
             event = args.shift(), // Store and remove events from args
@@ -154,9 +154,12 @@
         return this;
     };
 
-    Q.observable = function (component) {
-        Q.inherits(component, EventEmitter);
-        return Q;
+    Q.emitter = function (component) {
+        if (component) {
+            Q.inherits(component, Emitter);
+        }
+
+        return new Emitter();
     };
 
 }(this.Q));
