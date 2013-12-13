@@ -163,9 +163,11 @@
         this.emit('destroy');
     };
 
+    Q.emitter(Component);
+
     Q.component = function (component) {
         Q.inherits(component, Component);
-        return Q;
+        return component;
     };
 
 }(this, this.Q));

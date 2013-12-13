@@ -116,7 +116,7 @@
 
         listener.once = once || false;
 
-        if (this._eventsCollection[event]) {
+        if (this._eventsCollection[event] === undefined) {
             this._eventsCollection[event] = [];
         }
 
@@ -156,7 +156,7 @@
      */
     Emitter.prototype.off = function (event, listener) {
 
-        if (this._eventsCollection) {
+        if (this._eventsCollection === undefined) {
             return this;
         }
 
@@ -410,9 +410,11 @@
         this.emit('destroy');
     };
 
+    Q.emitter(Component);
+
     Q.component = function (component) {
         Q.inherits(component, Component);
-        return Q;
+        return component;
     };
 
 }(this, this.Q));
