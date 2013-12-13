@@ -3,15 +3,9 @@
 
     /**
      * Event Emitter Class for the browser.
-     * @memberof ch
+     * @private
      * @constructor
      * @returns {Object} Returns a new instance of Emitter.
-     * @example
-     * // Create a new instance of Emitter.
-     * var emitter = new Emitter();
-     * @example
-     * // Inheriting from Emitter.
-     * inherits(Component, Emitter);
      */
     function Emitter() {
         return this;
@@ -154,12 +148,40 @@
         return this;
     };
 
+    /**
+     * An Event Emitter component to add observer methods to a function.
+     * @memberof Q
+     * @param {Function} [component] A given constructor function.
+     * @returns {(Object | Function)} Returns a new instance of Emitter or a given constructor.
+     * @example
+     * // Use as mixin to extend a given constructor.
+     * function Foo() {};
+     * Q.emitter(Foo);
+     * @example
+     * // Creates a new instance of Emitter.
+     * var emitter = Q.emitter();
+     */
     Q.emitter = function (component) {
         if (component) {
-            Q.inherits(component, Emitter);
+            return Q.inherits(component, Emitter);
         }
 
         return new Emitter();
     };
+
+    /**
+     * An Event Emitter component to add observer methods to a function.
+     * @memberof Q
+     * @param {Function} [component] A given constructor function.
+     * @returns {(Object | Function)} Returns a new instance of Emitter or a given constructor.
+     * @example
+     * // Use as mixin to extend a given constructor.
+     * function Foo() {};
+     * Q.emitter(Foo);
+     * @example
+     * // Creates a new instance of Emitter.
+     * var emitter = Q.emitter();
+     */
+    Q.mediator = new Emitter();
 
 }(this.Q));

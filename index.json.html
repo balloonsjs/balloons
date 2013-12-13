@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BalloonsJS</title>
+    </head>
+    <body>
+        <script src="dist/Q.js"></script>
+        <script>
+            // Component
+            // Emitter
+            // Mediator
+            // pushState
+
+            // Foo
+            var Foo = Q.component({
+                'name': 'foo',
+                'initialize': function () {
+                    console.log(this.name);
+                }
+            });
+
+            // Bar
+            var Bar = Q.component({
+                'name': 'bar',
+                'initialize': function () {
+                    console.log(this.name);
+                }
+            });
+
+            // Instances
+            var foo = new Foo();
+            var bar = new Bar();
+        </script>
+    </body>
+</html>

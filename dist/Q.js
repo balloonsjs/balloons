@@ -9,10 +9,15 @@
 (function (window) {
     'use strict';
 
+    /**
+     * An object which contains all the public members.
+     * @namespace
+     */
     var Q = {};
 
     /**
      * Returns a shallow-copied clone of a given object.
+     * @memberof Q
      * @param {Object} obj A given object to clone.
      * @returns {Object}
      * @example
@@ -33,6 +38,7 @@
 
     /**
      * Extends a given object with properties from another object.
+     * @memberof Q
      * @param {Object} destination A given object to extend its properties.
      * @param {Object} from A given object to share its properties.
      * @returns {Object}
@@ -64,6 +70,7 @@
 
     /**
      * Inherits prototype properties from `uber` into `child` constructor.
+     * @memberof Q
      * @param {Function} child A given constructor function who inherits.
      * @param {Function} uber A given constructor function to inherit.
      * @returns {Object}
@@ -85,15 +92,9 @@
 
     /**
      * Event Emitter Class for the browser.
-     * @memberof ch
+     * @private
      * @constructor
      * @returns {Object} Returns a new instance of Emitter.
-     * @example
-     * // Create a new instance of Emitter.
-     * var emitter = new Emitter();
-     * @example
-     * // Inheriting from Emitter.
-     * inherits(Component, Emitter);
      */
     function Emitter() {
         return this;
@@ -236,6 +237,19 @@
         return this;
     };
 
+    /**
+     * An Event Emitter component to add observer methods to a function.
+     * @memberof Q
+     * @param {Function} [component] A give constructor function.
+     * @returns {(Object | Function)} Returns a new instance of Emitter or a given constructor.
+     * @example
+     * // Use as mixin to extend a given constructor.
+     * function Foo() {};
+     * Q.emitter(Foo);
+     * @example
+     * // Creates a new instance of Emitter.
+     * var emitter = Q.emitter();
+     */
     Q.emitter = function (component) {
         if (component) {
             Q.inherits(component, Emitter);
@@ -250,6 +264,7 @@
 
     /**
      * Base class for all components.
+     * @private
      * @constructor
      * @augments EventEmitter
      * @param {(jQuerySelector | ZeptoSelector)} $el jQuery or Zepto Selector.

@@ -1,10 +1,15 @@
 (function (window) {
     'use strict';
 
+    /**
+     * An object which contains all the public members.
+     * @namespace
+     */
     var Q = {};
 
     /**
      * Returns a shallow-copied clone of a given object.
+     * @memberof Q
      * @param {Object} obj A given object to clone.
      * @returns {Object}
      * @example
@@ -25,6 +30,7 @@
 
     /**
      * Extends a given object with properties from another object.
+     * @memberof Q
      * @param {Object} destination A given object to extend its properties.
      * @param {Object} from A given object to share its properties.
      * @returns {Object}
@@ -56,6 +62,7 @@
 
     /**
      * Inherits prototype properties from `uber` into `child` constructor.
+     * @memberof Q
      * @param {Function} child A given constructor function who inherits.
      * @param {Function} uber A given constructor function to inherit.
      * @returns {Object}

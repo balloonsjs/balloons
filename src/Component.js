@@ -3,6 +3,7 @@
 
     /**
      * Base class for all components.
+     * @private
      * @constructor
      * @augments EventEmitter
      * @param {(jQuerySelector | ZeptoSelector)} $el jQuery or Zepto Selector.
@@ -165,6 +166,17 @@
 
     Q.emitter(Component);
 
+    /**
+     * Creates base components
+     * @memberof Q
+     * @param {Function} [component] A given constructor function.
+     * @returns {(Object | Function)} Returns a given constructor as a component.
+     * @example
+     * // Use as mixin to extend a given constructor.
+     * function Foo() {}
+     *
+     * Q.component(Foo);
+     */
     Q.component = function (component) {
         Q.inherits(component, Component);
         return component;
