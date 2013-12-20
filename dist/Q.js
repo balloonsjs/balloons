@@ -84,7 +84,6 @@
         return uber.prototype;
     };
 
-
     window.Q = Q;
 }(this));
 (function (Q) {
@@ -240,7 +239,7 @@
     /**
      * An Event Emitter component to add observer methods to a function.
      * @memberof Q
-     * @param {Function} [component] A give constructor function.
+     * @param {Function} [component] A given constructor function.
      * @returns {(Object | Function)} Returns a new instance of Emitter or a given constructor.
      * @example
      * // Use as mixin to extend a given constructor.
@@ -252,11 +251,23 @@
      */
     Q.emitter = function (component) {
         if (component) {
-            Q.inherits(component, Emitter);
+            return Q.inherits(component, Emitter);
         }
 
         return new Emitter();
     };
+
+    /**
+     *
+     * @memberof Q
+     * @example
+     * //
+     *
+     * @example
+     * //
+     *
+     */
+    Q.mediator = new Emitter();
 
 }(this.Q));
 (function (window, Q) {
@@ -271,7 +282,11 @@
      * @param {Object} [options] Configuration options.
      * @returns {component} Returns a new instance of Component.
      */
-    function Component(el, options) {
+    function Component() {
+        return this;
+    }
+
+    Component.prototype._init = function () {
         /**
          * Reference to context of an instance.
          * @type {Object}
@@ -279,15 +294,20 @@
          */
         var that = this;
 
-        this._init(el, options);
+        /**
+         * Indicates if a component is enabled.
+         * @type {Boolean}
+         * @private
+         */
+        this._enabled = true;
 
-        if (this.initialize !== undefined) {
+        if (this.init !== undefined) {
             /**
              * If you define an initialize method, it will be executed when a new Expandable is created.
              * @memberof! Component.prototype
              * @function
              */
-            this.initialize();
+            this.init.apply(that, arguments);
         }
 
         /**
@@ -299,7 +319,11 @@
          *     // Some code here!
          * });
          */
-        window.setTimeout(function () { that.emit('ready'); }, 50);
+        window.setTimeout(function () {
+            that.emit('ready');
+        }, 50);
+
+        return this;
     }
 
     /**
@@ -318,35 +342,6 @@
      * @function
      */
     Component.prototype.constructor = Component;
-
-    /**
-     * Initialize a new instance of Component and merge custom options with defaults options.
-     * @memberof! Component.prototype
-     * @function
-     * @private
-     * @returns {instance} Returns an instance of Component.
-     */
-    Component.prototype._init = function (el, options) {
-
-        // Clones the defaults options or creates a new object.
-        var defaults = (this._defaults) ? Q.clone(this._defaults) : {};
-
-        if (options) {
-            if (el) {
-                this._options = defaults;
-
-            } else if (typeof el === 'object') {
-                options = el;
-                el = undefined;
-                this._options = Q.extend(defaults, options);
-            }
-
-        } else if (typeof options === 'object') {
-            this._options = Q.extend(defaults, options);
-        }
-
-        return this;
-    };
 
     /**
      * Enables an instance of Component.
@@ -425,11 +420,57 @@
         this.emit('destroy');
     };
 
+    Component.prototype.inflate = function (members) {
+        Q.extend(this.constructor.prototype, members);
+
+        return this;
+    };
+
+    // Add emitter capabilities to Component.
     Q.emitter(Component);
 
-    Q.component = function (component) {
-        Q.inherits(component, Component);
-        return component;
+    /**
+     * Defines new components constructors.
+     * @memberof Q
+     * @param {Array} [parents] - An optional collection of constructors to inherit.
+     * @param {Function} members - A given members to be attached to component's prototype.
+     * @returns {Function} Returns a new constructor as a component.
+     * @example
+     * // Defines a Foobar component that inhertis from Foo and Bar constructors.
+     * var Foobar = Q.define([Foo, Bar], {
+     *     'name': 'Foobar',
+     *     'init': function () {
+     *         console.log(this.name);
+     *     },
+     *     'sayFoobar': function () {
+     *         console.log('foobar');
+     *     }
+     * });
+     *
+     * // Creates a new instance of Foobar component.
+     * var foobar = new Foobar();
+     */
+    Q.define = function (parents, members) {
+
+        function Balloon() {
+            this._init.apply(this, arguments);
+            return this;
+        }
+
+        if (members === undefined) {
+            members = parents;
+            parents = [];
+        }
+
+        parents.unshift(Component);
+
+        parents.forEach(function (uber) {
+            Q.inherits(Balloon, uber);
+        });
+
+        Q.extend(Balloon.prototype, members);
+
+        return Balloon;
     };
 
 }(this, this.Q));
