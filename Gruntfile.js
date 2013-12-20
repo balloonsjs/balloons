@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 'options': {
                     'banner': '<%= banner.full %>'
                 },
-                'src': ['./src/Q.js', './src/emitter.js', './src/Component.js'],
+                'src': ['./src/Q.js', './src/emitter.js', './src/define.js'],
                 'dest': './dist/Q.js'
             }
         },

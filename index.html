@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Balloons JS</title>
+    </head>
+    <body>
+        <script src="dist/Q.js"></script>
+        <script>
+            var Foo = Q.define({
+                'name': 'Foo',
+                'init': function (id) {
+                    console.log(id);
+                },
+                'sayFoo': function () {
+                    console.log('foo');
+                    return this;
+                }
+            });
+
+            var f = new Foo('fooarg');
+
+            // Bar
+            var Bar = Q.define({
+                'name': 'Bar',
+                'init': function () {
+                    console.log(this.name);
+                },
+                'sayBar': function () {
+                    console.log('bar');
+                }
+            });
+
+            var b = new Bar();
+
+            // Foobar
+            var Foobar = Q.define([Foo, Bar], {
+                'name': 'Foobar',
+                'init': function () {
+                    console.log(this.name);
+                },
+                'sayFoobar': function () {
+                    console.log('foobar');
+                }
+            });
+
+            var foobar = new Foobar();
+        </script>
+    </body>
+</html>
