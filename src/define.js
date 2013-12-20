@@ -161,7 +161,7 @@
      * Defines new components constructors.
      * @memberof Q
      * @param {Array} [parents] - An optional collection of constructors to inherit.
-     * @param {Function} members - A given members to be attached to the component's prototype.
+     * @param {Function} members - A given members to be attached to component's prototype.
      * @returns {Function} Returns a new constructor as a component.
      * @example
      * // Defines a Foobar component that inhertis from Foo and Bar constructors.

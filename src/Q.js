@@ -76,6 +76,5 @@
         return uber.prototype;
     };
 
-
     window.Q = Q;
 }(this));

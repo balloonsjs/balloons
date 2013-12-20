@@ -170,17 +170,14 @@
     };
 
     /**
-     * An Event Emitter component to add observer methods to a function.
+     *
      * @memberof Q
-     * @param {Function} [component] A given constructor function.
-     * @returns {(Object | Function)} Returns a new instance of Emitter or a given constructor.
      * @example
-     * // Use as mixin to extend a given constructor.
-     * function Foo() {};
-     * Q.emitter(Foo);
+     * //
+     *
      * @example
-     * // Creates a new instance of Emitter.
-     * var emitter = Q.emitter();
+     * //
+     *
      */
     Q.mediator = new Emitter();
 
