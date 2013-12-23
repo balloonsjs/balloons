@@ -67,9 +67,9 @@
      * @param {Function} uber A given constructor function to inherit.
      * @returns {Object}
      * @example
-     * Q.inherits(child, uber);
+     * Q.inherit(child, uber);
      */
-    Q.inherits = function inherits(child, uber) {
+    Q.inherit = function inherit(child, uber) {
         var obj = child.prototype || {};
         child.prototype = Q.extend(obj, uber.prototype);
 

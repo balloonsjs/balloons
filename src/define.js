@@ -193,7 +193,7 @@
         parents.unshift(Component);
 
         parents.forEach(function (uber) {
-            Q.inherits(Balloon, uber);
+            Q.inherit(Balloon, uber);
         });
 
         Q.extend(Balloon.prototype, members);

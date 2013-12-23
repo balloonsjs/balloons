@@ -1,6 +1,6 @@
 {
   "name": "balloons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An event-based JavaScript library to build front-end components or widgets.",
   "author": "<guille87paz@gmail.com>",
   "contributors": [

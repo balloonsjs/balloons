@@ -163,21 +163,15 @@
      */
     Q.emitter = function (component) {
         if (component) {
-            return Q.inherits(component, Emitter);
+            return Q.inherit(component, Emitter);
         }
 
         return new Emitter();
     };
 
     /**
-     *
+     * An object that encapsulates how a set of objects interact.
      * @memberof Q
-     * @example
-     * //
-     *
-     * @example
-     * //
-     *
      */
     Q.mediator = new Emitter();
 

@@ -2,7 +2,7 @@
   "name": "balloons",
   "repo": "balloonsjs/balloons",
   "description": "An event-based JavaScript library to build front-end components or widgets.",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "keywords": [],
   "dependencies": {},
   "development": {},
