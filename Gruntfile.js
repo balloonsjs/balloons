@@ -64,17 +64,6 @@ module.exports = function (grunt) {
             }
         },
 
-        'jsdoc': {
-            'dist': {
-                'src': ['<%= concat.js.dest %>'],
-                'options': {
-                    'template': './libs/doc-template',
-                    'destination': './doc/',
-                    'private': false
-                }
-            }
-        },
-
         'jasmine': {
             'src': ['dist/Q.js'],
             'options': {

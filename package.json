@@ -2,27 +2,28 @@
   "name": "balloons",
   "version": "0.1.0",
   "description": "An event-based JavaScript library to build front-end components or widgets.",
-  "author": "<chico@mercadolibre.com>",
+  "author": "<guille87paz@gmail.com>",
   "contributors": [
     {
       "name": "Guille Paz",
       "email": "guille87paz@gmail.com"
     },
     {
-      "name": "Hernan Mammana",
+      "name": "Her Mammana",
       "email": "hernanmammana@gmail.com"
     },
     {
-      "name": "Leandro Linares",
+      "name": "Lean Linares",
       "email": "lean8086@gmail.com"
     }
   ],
   "scripts": {
-    "start": "node ./app"
+    "start": "grunt dist",
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/balloonjs/Q.git"
+    "url": "https://github.com/balloonjs/balloons.git"
   },
   "dependencies": {},
   "devDependencies": {
