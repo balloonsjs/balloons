@@ -1,4 +1,4 @@
-# [Balloons.js](http://balloonsjs.com) ![http://travis-ci.org/balloonsjs/balloons](https://secure.travis-ci.org/balloonsjs/balloons.png)
+# [Balloons.js](http://balloonsjs.com) [![Build Status](https://secure.travis-ci.org/balloonsjs/balloons.png)](http://travis-ci.org/balloonsjs/balloons)
 
 An event-based JavaScript library to build front-end components or widgets.
 
