@@ -16,7 +16,7 @@ describe('inherit() method', function () {
     });
 
     it('should inherit the first constructor from the second', function () {
-        Q.(Cat, Pet);
+        Q.inherit(Cat, Pet);
         expect(Cat.prototype.setName).toBeDefined();
     });
 });
