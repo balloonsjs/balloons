@@ -1,5 +1,5 @@
 /*!
- * Balloons.js v0.1.0
+ * Balloons.js v0.2.0
  * http://balloonsjs.com/
  *
  * Copyright (c) 2013, MercadoLibre.com
@@ -75,9 +75,9 @@
      * @param {Function} uber A given constructor function to inherit.
      * @returns {Object}
      * @example
-     * Q.inherits(child, uber);
+     * Q.inherit(child, uber);
      */
-    Q.inherits = function inherits(child, uber) {
+    Q.inherit = function inherit(child, uber) {
         var obj = child.prototype || {};
         child.prototype = Q.extend(obj, uber.prototype);
 
@@ -251,21 +251,15 @@
      */
     Q.emitter = function (component) {
         if (component) {
-            return Q.inherits(component, Emitter);
+            return Q.inherit(component, Emitter);
         }
 
         return new Emitter();
     };
 
     /**
-     *
+     * An object that encapsulates how a set of objects interact.
      * @memberof Q
-     * @example
-     * //
-     *
-     * @example
-     * //
-     *
      */
     Q.mediator = new Emitter();
 
@@ -465,7 +459,7 @@
         parents.unshift(Component);
 
         parents.forEach(function (uber) {
-            Q.inherits(Balloon, uber);
+            Q.inherit(Balloon, uber);
         });
 
         Q.extend(Balloon.prototype, members);
