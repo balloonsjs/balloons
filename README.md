@@ -1,8 +1,25 @@
-# balloons.js
+# [Balloons.js](http://balloonsjs.com) ![http://travis-ci.org/balloonsjs/balloons](https://secure.travis-ci.org/balloonsjs/balloons.png)
 
 An event-based JavaScript library to build front-end components or widgets.
 
 ## API
+
+### Q.clone
+[WIP]
+
+### Q.extend
+[WIP]
+
+### Q.inherits
+[WIP]
+
+### Q.emitter
+[WIP]
+
+### Q.mediator
+[WIP]
+
+### Q.define
 [WIP]
 
 ## Development setup
@@ -23,24 +40,24 @@ An event-based JavaScript library to build front-end components or widgets.
 
         $ npm install grunt-cli -g
 
-6. Run grunt tasks:
+6. Develop! :)
 
-        $ grunt
 
-7. Develop! :)
+## Grunt tasks
 
-**NOTE**
+- `grunt tests`: Runs jasmine tests.
+- `grunt dist`: Creates a distrubution version of Balloons. You should found two files: `.dist/Q.js` and `.dist/Q.min.js`.
 
-Please read through our code style guides:
-- [HTML](https://github.com/mercadolibre/html-style-guide)
-- [CSS](https://github.com/mercadolibre/css-style-guide)
+## Contribute
+
+Please read through our code style guide:
 - [JavaScript](https://github.com/mercadolibre/javascript-style-guide)
 
 ## Maintained by
 
+- Guille Paz ([@pazguille](https://twitter.com/pazguille))
 - Her Mammana ([@hmammana](https://twitter.com/hmammana))
 - Lean Linares ([@lean8086](https://twitter.com/lean8086))
-- Guille Paz ([@pazguille](https://twitter.com/pazguille))
 
 ## Credits
 
