@@ -161,7 +161,7 @@ var foobar = new Foobar();
 
 - `grunt dev`: Builds a development version.
 - `grunt test`: Runs Jasmine tests.
-- `grunt dist`: Creates a distrubution version of Balloons. You should found two files: `.dist/Q.js` and `.dist/Q.min.js`.
+- `grunt dist`: Creates a distrubution version of Balloons. You should find two files: `.dist/Q.js` and `.dist/Q.min.js`.
 
 ## Contribute
 
