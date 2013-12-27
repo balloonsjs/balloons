@@ -54,6 +54,7 @@ module.exports = function (grunt) {
         'jslint': { // configure the task
             'files': ['<%= concat.js.dest %>'],
             'directives': {
+                'browser': true,
                 'nomen': true,
                 'todo': true
             },
