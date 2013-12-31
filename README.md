@@ -15,9 +15,9 @@ Benefits:
 - [Q.define()](#qdefineparents-members)
 - [Q.emitter()](#qemittercomponent)
 - [Q.mediator()](#qmediator)
-- [Q.clone](#qclone)
-- [Q.extend](#qextend)
-- [Q.inherit](#qinherit)
+- [Q.clone](#qcloneobj)
+- [Q.extend](#qextenddestination-from)
+- [Q.inherit](#qinheritchild-uber)
 
 ### Q.define([parents], members)
 Defines new components constructors.
