@@ -1,54 +1,43 @@
 # [Balloons.js](http://balloonsjs.com) [![Build Status](https://secure.travis-ci.org/balloonsjs/balloons.png)](http://travis-ci.org/balloonsjs/balloons) [![devDependency Status](https://david-dm.org/balloonsjs/balloons/dev-status.png)](https://david-dm.org/balloonsjs/balloons#info=devDependencies)
 
+Balloons.js is an event-based JavaScript library to build front-end components or widgets.
 
-An event-based JavaScript library to build front-end components or widgets.
+Benefits:
+- Dependency-free.
+- Just 983 bytes (min & gzip).
+- Uses vanilla JavaScript.
+- Made it with love.
 
 ## API
 
-### Q.clone(obj)
-Returns a shallow-copied clone of a given object.
-- `obj`: [Object] - A given object to clone.
+### Table of contents
+
+- [Q.define()](#qdefineparents-members)
+- [Q.emitter()](#qemittercomponent)
+- [Q.mediator()](#qmediator)
+- [Q.clone](#qclone)
+- [Q.extend](#qextend)
+- [Q.inherit](#qinherit)
+
+### Q.define([parents], members)
+Defines new components constructors.
+- `parents` (optional): [Array] - An optional collection of constructors to inherit.
+- `members`: [Object] - A given members to be attached to component's prototype.
 
 ```js
-var foo = {
-    'baz': 'qux'
-};
+// Defines a Foobar component that inhertis from Foo and Bar constructors.
+var Foobar = Q.define([Foo, Bar], {
+    'name': 'Foobar',
+    'init': function () {
+        console.log(this.name);
+    },
+    'sayFoobar': function () {
+        console.log('foobar');
+    }
+});
 
-var bar = Q.clone(foo);
-```
-
-### Q.extend(destination, from)
-Extends a given object with properties from another object.
-- `destination`: [Object] - A given object to extend its properties.
-- `from`: [Object] - A given object to share its properties.
-
-```js
-var foo = {
-    'baz': 'qux'
-};
-
-var bar = {
-    'quux': 'corge'
-};
-
-Q.extend(foo, bar);
-```
-
-### Q.inherit(child, uber)
-Inherits prototype properties from `uber` into `child` constructor.
-- `child`: [Function] - A given constructor function who inherits.
-- `uber`: [Function] - A given constructor function to inherit.
-
-```js
-function Bar() {
-    // Some code here
-}
-
-function Foo() {
-    // Some code here
-}
-
-Q.inherit(Foo, Bar);
+// Creates a new instance of Foobar component.
+var foobar = new Foobar();
 ```
 
 ### Q.emitter([component])
@@ -115,25 +104,51 @@ An object that encapsulates how a set of objects interact. `Q.mediator` implemen
 
 `Q.mediator` has the same methods as an instance of `Q.emitter()`.
 
-### Q.define([parents], members)
-Defines new components constructors.
-- `parents` (optional): [Array] - An optional collection of constructors to inherit.
-- `members`: [Object] - A given members to be attached to component's prototype.
+
+### Q.clone(obj)
+Returns a shallow-copied clone of a given object.
+- `obj`: [Object] - A given object to clone.
 
 ```js
-// Defines a Foobar component that inhertis from Foo and Bar constructors.
-var Foobar = Q.define([Foo, Bar], {
-    'name': 'Foobar',
-    'init': function () {
-        console.log(this.name);
-    },
-    'sayFoobar': function () {
-        console.log('foobar');
-    }
-});
+var foo = {
+    'baz': 'qux'
+};
 
-// Creates a new instance of Foobar component.
-var foobar = new Foobar();
+var bar = Q.clone(foo);
+```
+
+### Q.extend(destination, from)
+Extends a given object with properties from another object.
+- `destination`: [Object] - A given object to extend its properties.
+- `from`: [Object] - A given object to share its properties.
+
+```js
+var foo = {
+    'baz': 'qux'
+};
+
+var bar = {
+    'quux': 'corge'
+};
+
+Q.extend(foo, bar);
+```
+
+### Q.inherit(child, uber)
+Inherits prototype properties from `uber` into `child` constructor.
+- `child`: [Function] - A given constructor function who inherits.
+- `uber`: [Function] - A given constructor function to inherit.
+
+```js
+function Bar() {
+    // Some code here
+}
+
+function Foo() {
+    // Some code here
+}
+
+Q.inherit(Foo, Bar);
 ```
 
 ## Development setup
