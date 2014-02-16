@@ -2,7 +2,7 @@
  * Balloons.js v0.2.0
  * http://balloonsjs.com/
  *
- * Copyright (c) 2013, MercadoLibre.com
+ * Copyright (c) 2014, MercadoLibre.com
  * Released under the MIT license.
  * http://balloonsjs.com/
  */
