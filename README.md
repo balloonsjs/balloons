@@ -178,10 +178,6 @@ Q.inherit(Foo, Bar);
 - `grunt test`: Runs Jasmine tests.
 - `grunt dist`: Creates a distrubution version of Balloons. You should find two files: `.dist/Q.js` and `.dist/Q.min.js`.
 
-## Contribute
-
-Please read through our code style guide:
-- [JavaScript](https://github.com/mercadolibre/javascript-style-guide)
 
 ## Maintained by
 
@@ -189,11 +185,8 @@ Please read through our code style guide:
 - Her Mammana ([@hmammana](https://twitter.com/hmammana))
 - Lean Linares ([@lean8086](https://twitter.com/lean8086))
 
-## Credits
-
-![MercadoLibre](http://static.mlstatic.com/org-img/chico/img/logo-mercadolibre-new.png)
 
 ## License
 Licensed under the MIT license.
 
-Copyright (c) 2013 [MercadoLibre](http://github.com/mercadolibre).
+Copyright (c) 2014 [BalloonsJS](http://github.com/balloonsjs).
